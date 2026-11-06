@@ -34,9 +34,6 @@ export default function Home() {
       {/* 7. Bollywood Stars Spotlight (cleared talent only) */}
       <StarsSpotlight />
 
-      {/* 8. Authentic Event Memories & Star Photography Archive */}
-      <HomeGallery />
-
       {/* 9. Eventin 3-Column Membership Pass Tiers Table */}
       <EventinPasses />
 
