@@ -4,7 +4,7 @@ import { Camera } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export type ImageSlotTone = "crowd" | "portrait" | "stage" | "venue";
-export type ImageSlotRatio = "4:5" | "16:9" | "1:1" | "portrait" | "wide";
+export type ImageSlotRatio = "4:5" | "16:9" | "1:1" | "portrait" | "wide" | "4:3";
 
 export interface ImageSlotProps extends React.HTMLAttributes<HTMLDivElement> {
   src?: string;
@@ -46,6 +46,7 @@ export function ImageSlot({
     "4:5": "aspect-[4/5]",
     "16:9": "aspect-[16/9]",
     "1:1": "aspect-square",
+    "4:3": "aspect-[4/3]",
     portrait: "aspect-[3/4]",
     wide: "aspect-[21/9]",
   };

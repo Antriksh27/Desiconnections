@@ -5,6 +5,7 @@ interface StickyMobileTicketBarProps {
   priceFrom?: string;
   ticketUrl?: string;
   isSoldOut: boolean;
+  isPast?: boolean;
   slug: string;
 }
 
@@ -13,13 +14,18 @@ export function StickyMobileTicketBar({
   priceFrom,
   ticketUrl,
   isSoldOut,
+  isPast,
   slug,
 }: StickyMobileTicketBarProps) {
   let ctaLabel = "Get tickets";
   let ctaHref = ticketUrl || `/join?event=${slug}`;
-  let isExternal = Boolean(ticketUrl && !isSoldOut);
+  let isExternal = Boolean(ticketUrl && !isSoldOut && !isPast);
 
-  if (isSoldOut) {
+  if (isPast) {
+    ctaLabel = "Join club";
+    ctaHref = "/join";
+    isExternal = false;
+  } else if (isSoldOut) {
     ctaLabel = "Join the waitlist";
     ctaHref = `/join?event=${slug}`;
     isExternal = false;
@@ -34,7 +40,7 @@ export function StickyMobileTicketBar({
       <div className="flex items-center justify-between gap-4">
         <div className="truncate">
           <span className="text-[10px] uppercase font-bold tracking-wider text-muted block">
-            {isSoldOut ? "Sold Out" : priceFrom ? `From ${priceFrom}` : "Member Access"}
+            {isPast ? "Past Showcase" : isSoldOut ? "Sold Out" : priceFrom ? `From ${priceFrom}` : "Member Access"}
           </span>
           <span className="text-xs font-display font-semibold text-ivory truncate block">
             {title}

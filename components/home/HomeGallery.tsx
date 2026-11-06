@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Camera, Sparkles } from "lucide-react";
+import { ArrowUpRight, Camera } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 
 interface GalleryMoment {
@@ -103,7 +103,7 @@ export function HomeGallery() {
                   alt={item.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A0618] via-transparent to-transparent opacity-80" />
 

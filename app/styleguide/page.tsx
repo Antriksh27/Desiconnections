@@ -216,7 +216,7 @@ export default function StyleguidePage() {
               </div>
               <div className="space-y-3 pt-4">
                 <Button variant="ghost" size="lg" className="w-full">
-                  Explore Upcoming Events
+                  Explore Past Showcases
                 </Button>
                 <Button variant="ghost" size="md" className="w-full">
                   See What&apos;s On

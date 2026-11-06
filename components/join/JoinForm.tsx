@@ -131,7 +131,7 @@ export function JoinForm() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
                 <Button href="/events" variant="primary" className="gap-2">
-                  Explore Upcoming Events <ArrowRight className="w-4 h-4" />
+                  Explore Event Archive <ArrowRight className="w-4 h-4" />
                 </Button>
                 <Button href="/" variant="ghost">
                   Back to Home

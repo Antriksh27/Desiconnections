@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "Touring Artists & Cultural Talent | The Desi Connections",
   description:
-    "Discover legendary vocalists and folk performers headlining The Desi Connections tours, including Udit Narayan, Falguni Pathak, and Bhavin Shastri.",
+    "Discover legendary vocalists, actors, and keynote leaders headlining The Desi Connections tours, including Shreya Ghoshal, Kumar Sanu, Anupam Kher, and Udit Narayan.",
 };
 
 export default function StarsPage() {

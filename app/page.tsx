@@ -25,7 +25,7 @@ export default function Home() {
       {/* 4. Three Pillars (Unequal weight, GSAP pinned moment on desktop) */}
       <PillarsSection />
 
-      {/* 5. Upcoming Tour Experiences (Eventin Ticket Cards) */}
+      {/* 5. Past Tour Showcases (Eventin Ticket Cards) */}
       <EventsCarousel />
 
       {/* 6. Interactive Eventin Tour Schedule & Sessions */}

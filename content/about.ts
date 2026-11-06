@@ -33,7 +33,7 @@ export const aboutContent: AboutContent = {
   pillars: [
     {
       title: "Entertainment Dominates",
-      description: "Complimentary concert passes for icons like Udit Narayan, Falguni Pathak, and Bhavin Shastri.",
+      description: "Complimentary concert passes for icons like Shreya Ghoshal, Kumar Sanu, Udit Narayan, and Anupam Kher.",
     },
     {
       title: "Community Commerce",

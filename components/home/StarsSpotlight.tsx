@@ -54,7 +54,7 @@ export function StarsSpotlight() {
                   label={star.name}
                 >
                   <div className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-[#EC008C] text-white shadow-md">
-                    <Mic2 className="w-3 h-3" /> Confirmed
+                    <Mic2 className="w-3 h-3" /> Showcase Artist
                   </div>
                 </ImageSlot>
               </div>
@@ -78,7 +78,7 @@ export function StarsSpotlight() {
                       href={`/events/${star.linkedEventSlug}`}
                       className="text-xs font-bold text-white hover:text-[#00E5FF] transition-colors inline-flex items-center gap-1.5"
                     >
-                      <span>Linked Tour Event</span>
+                      <span>View Past Showcase</span>
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>

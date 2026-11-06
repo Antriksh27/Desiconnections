@@ -51,7 +51,7 @@ export function ContactForm() {
         </span>
         <h3 className="text-2xl font-display text-ivory">Send an Enquiry</h3>
         <p className="text-sm text-mist leading-relaxed">
-          Have a question about upcoming tours, partnerships, or membership? We would love to hear from you.
+          Have a question about event tours, partnerships, or membership? We would love to hear from you.
         </p>
       </div>
 

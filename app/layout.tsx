@@ -62,9 +62,11 @@ export const metadata: Metadata = {
   keywords: [
     "The Desi Connections",
     "Bollywood concerts Columbus Ohio",
+    "Shreya Ghoshal Columbus concert",
+    "Kumar Sanu live Columbus",
     "Udit Narayan concert Columbus",
-    "Falguni Pathak Dandiya Columbus",
-    "Bhavin Shastri Sangeet Sandhya",
+    "Anupam Kher theatre Columbus",
+    "Vivek Ramaswamy diaspora business forum",
     "South Asian business marketplace USA Canada",
     "Buy sell Indian business USA Canada",
     "Switch n Save LLC energy advisory",

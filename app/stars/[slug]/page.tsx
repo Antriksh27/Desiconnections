@@ -172,10 +172,12 @@ export default async function StarDetailPage({ params }: StarDetailPageProps) {
                   <Button
                     variant="primary"
                     size="md"
-                    href={linkedEvent.ticketUrl || `/join?event=${linkedEvent.slug}`}
-                    external={Boolean(linkedEvent.ticketUrl && linkedEvent.status !== "sold-out")}
+                    href={linkedEvent.status === "past" ? `/events/${linkedEvent.slug}` : (linkedEvent.ticketUrl || `/join?event=${linkedEvent.slug}`)}
+                    external={Boolean(linkedEvent.status !== "past" && linkedEvent.ticketUrl && linkedEvent.status !== "sold-out")}
                   >
-                    {linkedEvent.status === "sold-out"
+                    {linkedEvent.status === "past"
+                      ? "View Past Showcase Archive"
+                      : linkedEvent.status === "sold-out"
                       ? "Join Meet & Greet Waitlist"
                       : linkedEvent.ticketUrl
                       ? "Reserve Meet & Greet Pass"
@@ -192,7 +194,7 @@ export default async function StarDetailPage({ params }: StarDetailPageProps) {
             {/* Linked Event Card */}
             {linkedEvent && (
               <div className="space-y-4">
-                <span className="label-caps text-muted">Touring With DesiConnections</span>
+                <span className="label-caps text-muted">Featured in Past Showcase</span>
                 <Link
                   href={`/events/${linkedEvent.slug}`}
                   className="group block bg-midnight border border-hairline rounded-3xl p-5 sm:p-6 hover:border-gold/40 transition-all duration-300 hover:shadow-lg"

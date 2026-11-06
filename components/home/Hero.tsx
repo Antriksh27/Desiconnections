@@ -2,51 +2,21 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { ArrowUpRight, Calendar, MapPin, Ticket, Flame, Star } from "lucide-react";
+import { ArrowUpRight, Calendar, MapPin, Sparkles, Star } from "lucide-react";
 import { eventsContent } from "@/content/events";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion } from "motion/react";
 
-function padZero(num: number): string {
-  return num < 10 ? `0${num}` : `${num}`;
-}
-
 export function Hero() {
-  const nextEvent = eventsContent.find((e) => e.status !== "past") || eventsContent[0];
-
-  // Target event date: Nov 14, 2026 19:00 EST (Udit Narayan Live in Symphony, Columbus)
-  const [timeLeft, setTimeLeft] = React.useState({
-    days: 20,
-    hours: 20,
-    minutes: 50,
-    seconds: 10,
-  });
-
-  React.useEffect(() => {
-    const target = new Date("2026-11-14T19:00:00-05:00").getTime();
-
-    const updateTimer = () => {
-      const now = Date.now();
-      const diff = Math.max(0, target - now);
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((diff / (1000 * 60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-      setTimeLeft({ days, hours, minutes, seconds });
-    };
-
-    updateTimer();
-    const interval = setInterval(updateTimer, 1000);
-    return () => clearInterval(interval);
-  }, []);
+  const featuredEvent = eventsContent[0];
 
   // Performer & icon avatar list
   const confirmedSpeakers = [
-    { name: "Udit Narayan", src: "/images/star_udit_narayan.jpg" },
-    { name: "Falguni Pathak", src: "/images/star_priya_sen.jpg" },
-    { name: "Bhavin Shastri", src: "/images/star_diljit.jpg" },
+    { name: "Shreya Ghoshal", src: "/images/star_shreya_ghoshal.jpg" },
     { name: "Kumar Sanu", src: "/images/star_kumar_sanu.jpg" },
+    { name: "Anupam Kher", src: "/images/star_anupam_kher.jpg" },
+    { name: "Udit Narayan", src: "/images/star_udit_narayan.jpg" },
   ];
 
   return (
@@ -71,7 +41,7 @@ export function Hero() {
       {/* Main 2-Column Asymmetric Hero Content */}
       <div className="relative z-10 max-w-[1280px] mx-auto w-full my-auto py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          
+
           {/* Left Column (7 cols): High-Impact Typography & Speaker Avatars */}
           <div className="lg:col-span-7 space-y-7 text-left">
             <Reveal variant="fade" delay={0.1}>
@@ -126,7 +96,7 @@ export function Hero() {
                   href="/events"
                   className="gap-2 text-sm px-7"
                 >
-                  <span>View Upcoming Events</span>
+                  <span>Explore Past Events</span>
                   <ArrowUpRight className="w-4 h-4 text-[#FF2A85]" />
                 </Button>
               </div>
@@ -162,7 +132,7 @@ export function Hero() {
                     ))}
                   </div>
                   <span className="text-xs font-semibold text-ivory block">
-                    Sing Along with Icons: Udit Narayan, Falguni Pathak &amp; More
+                    Sing Along with Icons: Shreya Ghoshal, Kumar Sanu, Udit Narayan &amp; Anupam Kher
                   </span>
                   <span className="text-[11px] text-mist block">
                     2 Free Annual Event Passes &bull; 10-Year Membership Access
@@ -172,24 +142,24 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* Right Column (5 cols): VIP Ticket Stub & Live Countdown Box */}
+          {/* Right Column (5 cols): Landmark Past Showcase Card */}
           <div className="lg:col-span-5">
             <Reveal variant="rise" delay={0.4}>
               <div className="bg-[#130D2E]/95 border border-[#EC008C]/40 rounded-[32px] p-6 sm:p-7 backdrop-blur-2xl shadow-[0_25px_60px_rgba(236,0,140,0.22)] space-y-5 relative overflow-hidden group hover:border-[#EC008C]/65 transition-colors">
-                
+
                 {/* Event Photo Thumbnail */}
-                <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 bg-[#0A0618]">
                   <Image
-                    src={nextEvent.imageUrl || "/images/star_udit_narayan.jpg"}
-                    alt={nextEvent.title}
+                    src={featuredEvent.imageUrl || "/images/event_shreya_ghoshal_tour.jpg"}
+                    alt={featuredEvent.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 450px"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0618] via-transparent to-transparent opacity-85" />
-                  
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0618]/90 via-transparent to-transparent opacity-80" />
+
                   <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-[#EC008C] text-white text-[10px] font-bold uppercase tracking-wider shadow-md">
-                    {nextEvent.category}
+                    {featuredEvent.category}
                   </span>
                   <span className="absolute top-3 right-3 text-[10px] font-mono uppercase tracking-widest text-ivory bg-[#0A0618]/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10">
                     PASS #TDC-COLUMBUS
@@ -197,11 +167,11 @@ export function Hero() {
                   <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-ivory font-semibold">
                     <span className="flex items-center gap-1.5">
                       <MapPin className="w-3.5 h-3.5 text-[#FF2A85]" />
-                      {nextEvent.city}, OH
+                      {featuredEvent.city}, OH
                     </span>
                     <span className="flex items-center gap-1.5 text-gold-light">
                       <Calendar className="w-3.5 h-3.5" />
-                      {nextEvent.date.split(",")[1]?.trim() || "Nov 14, 2026"}
+                      {featuredEvent.date.split(",")[1]?.trim() || "28 October 2023"}
                     </span>
                   </div>
                 </div>
@@ -209,60 +179,60 @@ export function Hero() {
                 {/* Event Info */}
                 <div className="space-y-1.5">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-[#00E5FF]" />
                     <span className="text-[11px] font-bold uppercase tracking-wider text-[#00E5FF]">
-                      Next Sponsored Concert
+                      Featured Past Showcase
                     </span>
                   </div>
                   <h3 className="text-xl font-display font-bold text-white group-hover:text-gold-light transition-colors">
-                    {nextEvent.title}
+                    {featuredEvent.title}
                   </h3>
                   <p className="text-xs text-mist truncate">
-                    {nextEvent.venue}
+                    {featuredEvent.venue}
                   </p>
                 </div>
 
-                {/* Eventin Style Countdown Timer */}
+                {/* Showcase Impact & Reception Highlights */}
                 <div className="bg-[#0A0618]/80 border border-white/10 rounded-2xl p-4 text-center space-y-2">
                   <div className="flex items-center justify-center gap-2 text-xs font-semibold text-mist uppercase tracking-widest">
-                    <Flame className="w-3.5 h-3.5 text-[#FF2A85]" />
-                    <span>Concert Starts In</span>
+                    <Sparkles className="w-3.5 h-3.5 text-[#FF2A85]" />
+                    <span>Showcase Production Highlights</span>
                   </div>
-                  
+
                   <div className="grid grid-cols-4 gap-2 pt-1">
                     <div className="bg-[#0A0618]/90 border border-white/10 rounded-xl p-2.5 shadow-inner">
-                      <span className="block text-2xl font-extrabold font-display text-ivory">
-                        {padZero(timeLeft.days)}
+                      <span className="block text-base sm:text-lg font-extrabold font-display text-ivory">
+                        Full
                       </span>
                       <span className="text-[9px] uppercase tracking-wider text-[#FF2A85] font-bold">
-                        Days
+                        House
                       </span>
                     </div>
 
                     <div className="bg-[#0A0618]/90 border border-white/10 rounded-xl p-2.5 shadow-inner">
-                      <span className="block text-2xl font-extrabold font-display text-ivory">
-                        {padZero(timeLeft.hours)}
+                      <span className="block text-base sm:text-lg font-extrabold font-display text-ivory">
+                        VIP
                       </span>
                       <span className="text-[9px] uppercase tracking-wider text-[#FF2A85] font-bold">
-                        Hours
+                        Lounge
                       </span>
                     </div>
 
                     <div className="bg-[#0A0618]/90 border border-white/10 rounded-xl p-2.5 shadow-inner">
-                      <span className="block text-2xl font-extrabold font-display text-ivory">
-                        {padZero(timeLeft.minutes)}
+                      <span className="block text-base sm:text-lg font-extrabold font-display text-ivory">
+                        2 Passes
                       </span>
                       <span className="text-[9px] uppercase tracking-wider text-[#FF2A85] font-bold">
-                        Mins
+                        Claimed
                       </span>
                     </div>
 
                     <div className="bg-[#0A0618]/90 border border-white/10 rounded-xl p-2.5 shadow-inner">
-                      <span className="block text-2xl font-extrabold font-display text-[#00E5FF]">
-                        {padZero(timeLeft.seconds)}
+                      <span className="block text-base sm:text-lg font-extrabold font-display text-[#00E5FF]">
+                        Strings
                       </span>
                       <span className="text-[9px] uppercase tracking-wider text-[#00E5FF] font-bold">
-                        Secs
+                        Symphony
                       </span>
                     </div>
                   </div>
@@ -274,7 +244,7 @@ export function Hero() {
                     <span className="px-2.5 py-0.5 rounded-full bg-[#EC008C]/20 border border-[#EC008C]/40 text-[#FF2A85] font-bold">
                       2 Passes Included
                     </span>
-                    {nextEvent.lineup.slice(0, 1).map((artist, idx) => (
+                    {featuredEvent.lineup.slice(0, 1).map((artist, idx) => (
                       <span
                         key={idx}
                         className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-ivory"
@@ -287,11 +257,10 @@ export function Hero() {
                   <Button
                     variant="primary"
                     size="sm"
-                    href={`/events/${nextEvent.slug}`}
+                    href={`/events/${featuredEvent.slug}`}
                     className="gap-1.5 shrink-0"
                   >
-                    <Ticket className="w-3.5 h-3.5" />
-                    <span>Reserve Passes</span>
+                    <span>View Showcase</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Button>
                 </div>

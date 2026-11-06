@@ -25,7 +25,7 @@ export default function NotFound() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
           <Button href="/events" variant="primary" className="gap-2">
-            Browse Upcoming Events <ArrowRight className="w-4 h-4" />
+            Browse Event Archive <ArrowRight className="w-4 h-4" />
           </Button>
           <Button href="/" variant="ghost" className="gap-2">
             <Home className="w-4 h-4" /> Return Home

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowUpRight, Calendar, MapPin, Ticket } from "lucide-react";
+import { ArrowUpRight, Calendar, MapPin } from "lucide-react";
 import { eventsContent } from "@/content/events";
 import { StatusChip } from "@/components/ui/StatusChip";
 import { ImageSlot } from "@/components/ui/ImageSlot";
@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function EventsCarousel() {
-  const upcomingEvents = eventsContent.filter((e) => e.status !== "past").slice(0, 6);
+  const showcaseEvents = eventsContent.slice(0, 6);
 
   return (
     <section className="py-20 sm:py-28 px-6 sm:px-12 max-w-[1280px] mx-auto space-y-12 relative">
@@ -19,14 +19,14 @@ export function EventsCarousel() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EC008C]/15 border border-[#EC008C]/35">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF2A85] animate-pulse" />
             <span className="text-[11px] font-bold uppercase tracking-widest text-[#FF2A85]">
-              ON TOUR &bull; ARENAS &amp; SHOWCASES
+              PAST SHOWCASES &bull; CONCERT ARCHIVE
             </span>
           </div>
           <h2 className="display-lg text-white font-display font-extrabold leading-tight">
-            Upcoming <span className="text-gradient-eventin">Live Experiences</span>.
+            Past <span className="text-gradient-eventin">Live Experiences</span>.
           </h2>
           <p className="body-lg text-mist">
-            Members receive advance presale access, lower-bowl allocations, and private lounge check-in across all sponsored dates.
+            Explore past landmark concerts, theatre productions, and community galas organized across Columbus and regional stages.
           </p>
         </div>
 
@@ -36,14 +36,14 @@ export function EventsCarousel() {
           href="/events"
           className="shrink-0 self-start sm:self-auto gap-2 text-xs"
         >
-          <span>See all tour dates</span>
+          <span>Explore event archive</span>
           <ArrowUpRight className="w-4 h-4 text-[#FF2A85]" />
         </Button>
       </div>
 
-      {/* Grid of upcoming event ticket cards */}
+      {/* Grid of past event showcase cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
-        {upcomingEvents.map((event, idx) => (
+        {showcaseEvents.map((event, idx) => (
           <Reveal key={event.slug} variant="rise" delay={0.08 * idx}>
             <Link
               href={`/events/${event.slug}`}
@@ -55,13 +55,13 @@ export function EventsCarousel() {
                   src={event.imageUrl}
                   alt={event.title}
                   tone={event.imageSlotTone}
-                  aspectRatio="16:9"
+                  aspectRatio="4:3"
                   label={event.title}
                 >
                   <div className="flex items-center justify-between">
                     <StatusChip status={event.status} size="sm" />
                     <span className="text-[11px] font-bold text-white bg-[#EC008C] px-3 py-1 rounded-full shadow-md">
-                      {event.priceFrom || "VIP Pass"}
+                      Showcase
                     </span>
                   </div>
                 </ImageSlot>
@@ -104,15 +104,14 @@ export function EventsCarousel() {
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between">
                   <div>
                     <span className="text-[10px] text-mist block uppercase tracking-wider font-semibold">
-                      Pass Access
+                      Tour Production
                     </span>
-                    <span className="text-base font-bold text-white font-display">
-                      {event.priceFrom || "Members only"}
+                    <span className="text-sm font-bold text-white font-display">
+                      Columbus Showcase
                     </span>
                   </div>
                   <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#EC008C] to-[#FF2A85] px-4 py-2 rounded-full shadow-md group-hover:scale-105 transition-transform">
-                    <Ticket className="w-3.5 h-3.5" />
-                    <span>Get Pass</span>
+                    <span>View Details</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </span>
                 </div>

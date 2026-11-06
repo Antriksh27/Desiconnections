@@ -31,7 +31,7 @@ export const faqsContent: FaqItem[] = [
     category: "events",
     question: "How do the complimentary concert passes work?",
     answer:
-      "When we sponsor entertainment or cultural tours in Columbus or partner cities, active members receive two complimentary entry tickets each year for one or two events of our choosing for up to 10 years or more. Past and upcoming featured stars include Udit Narayan, Falguni Pathak, and Bhavin Shastri.",
+      "When we sponsor entertainment or cultural tours in Columbus or partner cities, active members receive two complimentary entry tickets each year for one or two events of our choosing for up to 10 years or more. Past featured stars include Shreya Ghoshal, Kumar Sanu, Udit Narayan, and Anupam Kher.",
   },
   {
     id: "why-share-utility-bill",

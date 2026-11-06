@@ -18,7 +18,7 @@ export function EventDirectory({ initialEvents }: EventDirectoryProps) {
   const [selectedType, setSelectedType] = React.useState<string>("all");
   const [viewMode, setViewMode] = React.useState<"grid" | "list">("grid");
 
-  // The next upcoming major event is featured at the top
+  // The featured landmark event is presented at the top
   const featuredEvent = initialEvents[0];
 
   const filteredEvents = initialEvents.filter((event) => {
@@ -40,9 +40,9 @@ export function EventDirectory({ initialEvents }: EventDirectoryProps) {
     setSelectedType("all");
   };
 
-  const cities = ["all", "New York", "San Francisco", "Los Angeles", "Chicago", "Dallas", "New Jersey"];
-  const months = ["all", "October", "November", "December", "January"];
-  const types = ["all", "Live Concert", "Club Gala", "Networking", "Club Night"];
+  const cities = ["all", ...Array.from(new Set(initialEvents.map((e) => e.city)))];
+  const months = ["all", "August", "September", "October", "November"];
+  const types = ["all", ...Array.from(new Set(initialEvents.map((e) => e.category)))];
 
   return (
     <div className="space-y-16">
@@ -53,7 +53,7 @@ export function EventDirectory({ initialEvents }: EventDirectoryProps) {
             <div className="lg:col-span-7 space-y-5">
               <div className="flex flex-wrap items-center gap-2.5">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/20 text-gold-light text-xs font-bold uppercase tracking-wider border border-gold/40">
-                  <Sparkles className="w-3.5 h-3.5 fill-gold-light" /> Featured Showcase
+                  <Sparkles className="w-3.5 h-3.5 fill-gold-light" /> Landmark Showcase Archive
                 </span>
                 <StatusChip status={featuredEvent.status} size="sm" />
               </div>
@@ -63,7 +63,7 @@ export function EventDirectory({ initialEvents }: EventDirectoryProps) {
               </h2>
 
               <p className="body-base text-mist max-w-xl">
-                Experience red carpet arrivals, acoustic fusion, and private mezzanine access at Manhattan&apos;s premier gala night.
+                A look back at priority lounge check-in, orchestral acoustic overtures, and unforgettable live performances hosted in Columbus, Ohio.
               </p>
 
               <div className="flex flex-wrap items-center gap-5 text-xs text-mist font-medium pt-2">
@@ -78,10 +78,10 @@ export function EventDirectory({ initialEvents }: EventDirectoryProps) {
 
               <div className="flex items-center gap-4 pt-4">
                 <Button variant="primary" size="md" href={`/events/${featuredEvent.slug}`}>
-                  Get Tickets
+                  View Event Details
                 </Button>
-                <Button variant="ghost" size="md" href={`/events/${featuredEvent.slug}`}>
-                  View Schedule &amp; Lineup
+                <Button variant="ghost" size="md" href="/join">
+                  Join for Future Tours
                 </Button>
               </div>
             </div>
@@ -91,7 +91,7 @@ export function EventDirectory({ initialEvents }: EventDirectoryProps) {
                 src={featuredEvent.imageUrl}
                 alt={featuredEvent.title}
                 tone="stage"
-                aspectRatio="16:9"
+                aspectRatio="4:3"
                 label="Featured: Gala Stage & Red Carpet"
                 className="shadow-2xl"
               />
@@ -111,11 +111,10 @@ export function EventDirectory({ initialEvents }: EventDirectoryProps) {
                 key={city}
                 type="button"
                 onClick={() => setSelectedCity(city)}
-                className={`text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-wider transition-all cursor-pointer ${
-                  selectedCity.toLowerCase() === city.toLowerCase()
+                className={`text-xs px-3.5 py-1.5 rounded-full font-bold uppercase tracking-wider transition-all cursor-pointer ${selectedCity.toLowerCase() === city.toLowerCase()
                     ? "bg-gold text-ink shadow-sm"
                     : "bg-plum/60 text-mist hover:text-ivory border border-hairline"
-                }`}
+                  }`}
               >
                 {city === "all" ? "All Cities" : city}
               </button>
@@ -128,9 +127,8 @@ export function EventDirectory({ initialEvents }: EventDirectoryProps) {
               type="button"
               onClick={() => setViewMode("grid")}
               aria-label="Grid view"
-              className={`p-2 rounded-full transition-colors cursor-pointer ${
-                viewMode === "grid" ? "bg-plum text-gold-light" : "text-muted hover:text-ivory"
-              }`}
+              className={`p-2 rounded-full transition-colors cursor-pointer ${viewMode === "grid" ? "bg-plum text-gold-light" : "text-muted hover:text-ivory"
+                }`}
             >
               <LayoutGrid className="w-4 h-4" />
             </button>
@@ -138,9 +136,8 @@ export function EventDirectory({ initialEvents }: EventDirectoryProps) {
               type="button"
               onClick={() => setViewMode("list")}
               aria-label="List view"
-              className={`p-2 rounded-full transition-colors cursor-pointer ${
-                viewMode === "list" ? "bg-plum text-gold-light" : "text-muted hover:text-ivory"
-              }`}
+              className={`p-2 rounded-full transition-colors cursor-pointer ${viewMode === "list" ? "bg-plum text-gold-light" : "text-muted hover:text-ivory"
+                }`}
             >
               <List className="w-4 h-4" />
             </button>
@@ -206,10 +203,10 @@ export function EventDirectory({ initialEvents }: EventDirectoryProps) {
         /* Empty State */
         <div className="bg-midnight/70 border border-hairline rounded-3xl p-12 text-center space-y-4 max-w-xl mx-auto my-8">
           <p className="text-lg font-display text-ivory">
-            No events match. Try another city.
+            No events match this filter.
           </p>
           <p className="text-xs text-mist leading-relaxed">
-            We are curating headline tours across New York, San Francisco, Los Angeles, Chicago, and Dallas. New announcements drop fortnightly.
+            All current archived showcases were organized in Columbus, Ohio. Try selecting another category or reset filters to browse the complete showcase collection.
           </p>
           <div className="pt-2">
             <Button variant="ghost" size="sm" onClick={resetFilters}>

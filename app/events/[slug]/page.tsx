@@ -39,8 +39,8 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${event.title} | Events`,
-    description: `${event.title} live at ${event.venue}, ${event.city} on ${event.date}. Reserved tickets and private lounges for DesiConnections members.`,
+    title: `${event.title} | Event Archive`,
+    description: `${event.title} presented at ${event.venue}, ${event.city} on ${event.date}. Archive of private lounge check-in and stage highlights for DesiConnections members.`,
     openGraph: {
       title: `${event.title} | DesiConnections`,
       description: `${event.date} at ${event.venue}, ${event.city}.`,
@@ -56,12 +56,17 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
     notFound();
   }
 
+  const isPast = event.status === "past";
   const isSoldOut = event.status === "sold-out";
   let ctaLabel = "Get tickets";
   let ctaHref = event.ticketUrl || `/join?event=${event.slug}`;
-  let isExternal = Boolean(event.ticketUrl && !isSoldOut);
+  let isExternal = Boolean(event.ticketUrl && !isSoldOut && !isPast);
 
-  if (isSoldOut) {
+  if (isPast) {
+    ctaLabel = "Join club for future events";
+    ctaHref = "/join";
+    isExternal = false;
+  } else if (isSoldOut) {
     ctaLabel = "Join the waitlist";
     ctaHref = `/join?event=${event.slug}`;
     isExternal = false;
@@ -202,7 +207,12 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
                   <span>{ctaLabel}</span>
                   {isExternal && <ExternalLink className="w-3.5 h-3.5 ml-1" />}
                 </Button>
-                {event.priceFrom && (
+                {isPast ? (
+                  <div className="text-xs text-mist">
+                    <span className="text-[10px] text-muted block uppercase">Tour Status</span>
+                    <span className="text-base font-bold text-ivory">Showcase Concluded</span>
+                  </div>
+                ) : event.priceFrom && (
                   <div className="text-xs text-mist">
                     <span className="text-[10px] text-muted block uppercase">Tickets from</span>
                     <span className="text-base font-bold text-ivory">{event.priceFrom}</span>
@@ -355,6 +365,7 @@ export default async function EventDetailPage({ params }: EventDetailPageProps) 
         priceFrom={event.priceFrom}
         ticketUrl={event.ticketUrl}
         isSoldOut={isSoldOut}
+        isPast={isPast}
         slug={event.slug}
       />
     </div>

@@ -53,7 +53,7 @@ export function StarDirectory({ initialStars }: StarDirectoryProps) {
       {/* Filter Tabs */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-hairline pb-4">
         <div className="flex items-center gap-2">
-          {(["all", "upcoming", "past"] as const).map((tab) => (
+          {(["all", "past", "upcoming"] as const).map((tab) => (
             <button
               key={tab}
               type="button"
@@ -64,7 +64,7 @@ export function StarDirectory({ initialStars }: StarDirectoryProps) {
                   : "bg-plum/60 text-mist hover:text-ivory border border-hairline"
               }`}
             >
-              {tab === "all" ? "All Talent" : tab === "upcoming" ? "Upcoming Tours" : "Past Appearances"}
+              {tab === "all" ? "All Talent" : tab === "past" ? "Past Appearances" : "Upcoming Tours"}
             </button>
           ))}
         </div>
@@ -94,7 +94,7 @@ export function StarDirectory({ initialStars }: StarDirectoryProps) {
                 >
                   <div className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#EC008C]/25 text-white border border-[#EC008C]/40 backdrop-blur-md">
                     <Sparkles className="w-2.5 h-2.5 fill-[#FF2A85] text-[#FF2A85]" />
-                    <span className="capitalize">{star.status}</span>
+                    <span className="capitalize">{star.status === "past" ? "Past Showcase" : star.status}</span>
                   </div>
                 </ImageSlot>
               </div>

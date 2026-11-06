@@ -82,7 +82,7 @@ export function PillarsSection() {
                 Front-row concerts. <span className="text-gradient-eventin">Two free tickets every year.</span>
               </h3>
               <p className="body-base text-mist max-w-xl leading-relaxed">
-                Receive 2 complimentary entry tickets each year to top concerts and events in Columbus City. Sing along with icons like Udit Narayan, Falguni Pathak, Bhavin Shastri, and many more for up to 10 years or more.
+                Receive 2 complimentary entry tickets each year to top concerts and events in Columbus City. Sing along with icons like Shreya Ghoshal, Kumar Sanu, Udit Narayan, and Anupam Kher for up to 10 years or more.
               </p>
             </div>
 
@@ -102,7 +102,7 @@ export function PillarsSection() {
                 href="/events"
                 className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-white bg-gradient-to-r from-[#EC008C] to-[#FF2A85] px-5 py-2.5 rounded-full transition-all shadow-md group-hover:scale-105"
               >
-                <span>See upcoming events</span>
+                <span>Explore past events</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
             </div>
