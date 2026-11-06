@@ -1,15 +1,15 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { Sparkles, Users, Zap, ShieldCheck, ArrowRight } from "lucide-react";
+import { Sparkles, Building2, Zap, ShieldCheck, ArrowRight, Phone } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import { aboutContent } from "@/content/about";
 import { ContactForm } from "@/components/about/ContactForm";
 
 export const metadata: Metadata = {
-  title: "About Our Story & Values | DesiConnections",
+  title: "About Our Story & Values | The Desi Connections",
   description:
-    "Learn about DesiConnections, America's premier private club for South Asian entertainment, curated networking, and everyday member benefits.",
+    "Learn about The Desi Connections, founded in Columbus, Ohio to unite the South Asian diaspora through headline concerts, business referrals, and energy advisory.",
 };
 
 export default function AboutPage() {
@@ -17,7 +17,7 @@ export default function AboutPage() {
 
   const pillarIcons = [
     <Sparkles key="ent" className="w-6 h-6 text-gold-light" />,
-    <Users key="conn" className="w-6 h-6 text-gold-light" />,
+    <Building2 key="conn" className="w-6 h-6 text-gold-light" />,
     <Zap key="deals" className="w-6 h-6 text-volt" />,
   ];
 
@@ -36,7 +36,7 @@ export default function AboutPage() {
             eyebrow="Our Story & Vision"
             titleBefore="Where Entertainment"
             titleItalic="Meets"
-            titleAfter="Genuine Connection"
+            titleAfter="Community Growth"
             align="center"
           />
 
@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <ImageSlot
                   aspectRatio="4:5"
                   tone="stage"
-                  label="Cultural Celebration & Private Lounge"
+                  label="Sponsored Concert & Cultural Gathering"
                   className="rounded-2xl"
                 />
               </div>
@@ -72,7 +72,7 @@ export default function AboutPage() {
             titleBefore="Our"
             titleItalic="Three"
             titleAfter="Pillars"
-            description="Built on culture, driven by hospitality, and grounded in community value."
+            description="Built on culture, driven by hospitality, and grounded in mutual community value."
             align="center"
           />
 
@@ -80,7 +80,7 @@ export default function AboutPage() {
             {pillars.map((pillar, idx) => (
               <div
                 key={idx}
-                className="bg-midnight/70 border border-hairline-strong rounded-3xl p-8 space-y-4 hover:border-gold-primary/30 transition-all duration-300"
+                className="bg-midnight/70 border border-hairline-strong rounded-3xl p-8 space-y-4 hover:border-gold/30 transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-2xl bg-ink/80 border border-hairline flex items-center justify-center">
                   {pillarIcons[idx % pillarIcons.length]}
@@ -107,12 +107,12 @@ export default function AboutPage() {
                 Community Guidelines
               </h3>
               <p className="text-sm text-mist max-w-2xl">
-                DesiConnections is built on mutual respect and warm hospitality. Our members agree to simple standards that keep every evening memorable.
+                The Desi Connections is built on mutual respect, direct referrals, and cultural celebration.
               </p>
             </div>
             <Link
               href="/community-guidelines"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-gold-light hover:text-gold-primary transition-colors shrink-0"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-gold-light hover:text-gold transition-colors shrink-0"
             >
               Read full guidelines <ArrowRight className="w-4 h-4" />
             </Link>
@@ -121,7 +121,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-hairline">
             {communityGuidelines.map((guideline, idx) => (
               <div key={idx} className="flex gap-4 items-start">
-                <div className="w-7 h-7 rounded-full bg-gold-dark/20 border border-gold-primary/30 text-gold-light font-display text-xs flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-7 h-7 rounded-full bg-gold/20 border border-gold/30 text-gold-light font-display text-xs flex items-center justify-center shrink-0 mt-0.5">
                   0{idx + 1}
                 </div>
                 <p className="text-sm text-mist/90 leading-relaxed font-body">
@@ -132,14 +132,14 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section 4: Leadership Team Placeholders */}
+        {/* Section 4: Leadership Team */}
         <section className="space-y-12">
           <SectionHeading
-            eyebrow="The Team"
-            titleBefore="Curators"
+            eyebrow="Community Leadership"
+            titleBefore="Leaders"
             titleItalic="Behind"
-            titleAfter="the Club"
-            description="A passionate collective of event promoters, community directors, and cultural strategists."
+            titleAfter="the Network"
+            description="Connecting diaspora families, business owners, and artists across Columbus, Ohio and North America."
             align="center"
           />
 
@@ -167,6 +167,12 @@ export default function AboutPage() {
                   <p className="text-sm text-mist leading-relaxed pt-1">
                     {member.bio}
                   </p>
+                  {member.phone && (
+                    <p className="text-xs text-volt font-bold pt-1 flex items-center justify-center sm:justify-start gap-1.5">
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>{member.phone}</span>
+                    </p>
+                  )}
                 </div>
               </div>
             ))}

@@ -22,7 +22,7 @@ export function EverydayBenefitsStrip() {
             Quiet Everyday Benefits for Members
           </h2>
           <p className="text-xs text-mist max-w-xl">
-            Switch n Save energy reviews and fine dining arrangements across New York, California, Texas, and Illinois.
+            Switch n Save electricity and gas advisory, plus business marketplace and hiring exchanges across the USA and Canada.
           </p>
         </div>
         <Link

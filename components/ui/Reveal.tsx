@@ -21,26 +21,15 @@ export function Reveal({
 }: RevealProps) {
   const shouldReduceMotion = useReducedMotion();
 
-  // If reduced motion is requested, fall back to a simple opacity fade
   if (shouldReduceMotion) {
-    return (
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.3, delay }}
-        className={className}
-      >
-        {children}
-      </motion.div>
-    );
+    return <div className={className}>{children}</div>;
   }
 
   const cubicEase = [0.22, 1, 0.36, 1] as const;
 
   const variants = {
     rise: {
-      initial: { opacity: 0, y: 24 },
+      initial: { opacity: 0, y: 20 },
       whileInView: { opacity: 1, y: 0 },
       transition: {
         duration,
@@ -80,7 +69,7 @@ export function Reveal({
     <motion.div
       initial={selected.initial}
       whileInView={selected.whileInView}
-      viewport={{ once: true, margin: "-40px" }}
+      viewport={{ once: true, amount: "some" }}
       transition={selected.transition}
       className={cn(className)}
     >

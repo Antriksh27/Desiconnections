@@ -4,6 +4,7 @@ export const TeamMemberSchema = z.object({
   name: z.string(),
   role: z.string(),
   bio: z.string(),
+  phone: z.string().optional(),
 });
 
 export const AboutContentSchema = z.object({
@@ -22,45 +23,43 @@ export const AboutContentSchema = z.object({
 export type TeamMember = z.infer<typeof TeamMemberSchema>;
 export type AboutContent = z.infer<typeof AboutContentSchema>;
 
-// TODO: Replace founder bios with confirmed team bios
 export const aboutContent: AboutContent = {
-  headline: "Where Entertainment Meets Opportunity",
+  headline: "Connecting Communities, Empowering Growth",
   story: [
-    "DesiConnections started with a simple belief: the desi community in the United States deserves a private-club experience that matches the energy of our culture.",
-    "For years, getting tickets to headline Bollywood concerts meant chaotic queues, generic arenas, and zero personal hospitality. Networking meant dull business breakfasts in stale conference rooms.",
-    "We built DesiConnections to change that: front-row seats to premier entertainment, a room full of people you actually want to meet, and everyday benefits that give back to our members.",
+    "The Desi Connections was created with a clear purpose: to bring the South Asian diaspora together through unforgettable cultural experiences, peer-to-peer business opportunities, and practical everyday savings.",
+    "For years, accessing top-tier cultural concerts meant dealing with high broker fees and generic venues with zero personal hospitality. Buying or selling a commercial business meant steep commissions. Navigating energy bills meant dealing with complex utility statements.",
+    "Operated by Switch n Save LLC and rooted in Columbus, Ohio, The Desi Connections brings these priorities together under one roof. Members receive complimentary annual concert tickets, direct access to buy and sell businesses and properties across the USA and Canada at no cost, and over 70 years of combined energy advisory experience.",
   ],
   pillars: [
     {
       title: "Entertainment Dominates",
-      description: "Front-row nights, intimate meet-and-greets, and private club galas.",
+      description: "Complimentary concert passes for icons like Udit Narayan, Falguni Pathak, and Bhavin Shastri.",
     },
     {
-      title: "Curated Connections",
-      description: "Founders, creators, doctors, dancers, and leaders sharing genuine connections.",
+      title: "Community Commerce",
+      description: "A free referral platform to buy and sell businesses, properties, and post career openings across North America.",
     },
     {
-      title: "Everyday Benefits",
-      description: "Member energy deals and dining perks that make membership effortlessly rewarding.",
+      title: "Everyday Energy Advisory",
+      description: "Over 70 years of combined electricity and gas expertise through Switch n Save LLC to manage costs.",
     },
   ],
   team: [
     {
-      // TODO: Replace with executive founder bio
-      name: "Kabir Malhotra",
-      role: "Co-Founder & Head of Talent",
-      bio: "Former tour promoter connecting subcontinent artists with North American arenas for over a decade.",
+      name: "Mr. Ketan Patel",
+      role: "Community Director & Utility Advisor",
+      bio: "Dedicated community organizer and energy specialist based in Columbus, Ohio. Committed to cultural sponsorship, commercial real estate networking, and utility management for families and businesses.",
+      phone: "614-772-2247 / 614-745-7133",
     },
     {
-      // TODO: Replace with executive community lead bio
-      name: "Ananya Roy",
-      role: "Co-Founder & Community Director",
-      bio: "Tech entrepreneur and cultural strategist passionate about diaspora networks and arts patrons.",
+      name: "Switch n Save Advisory Group",
+      role: "Energy Advisory Partner",
+      bio: "Over 70 years of combined experience in deregulated electricity and natural gas markets, helping commercial operators and households secure transparent rate structures.",
     },
   ],
   communityGuidelines: [
     "Respect the room: every member is here to celebrate culture and connect with integrity.",
-    "No commercial spamming: connections happen naturally through conversation, not sales pitches.",
-    "Discretion and privacy: keep backstage and private lounge moments among members.",
+    "No commercial spamming: connections happen naturally through conversation and trusted referrals.",
+    "Discretion and privacy: utility bills and proprietary business listings are kept confidential.",
   ],
 };

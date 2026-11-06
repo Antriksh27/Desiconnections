@@ -1,12 +1,13 @@
 import { Marquee } from "@/components/ui/Marquee";
 
 const marqueeMoments = [
-  { city: "New York", title: "Bollywood Gala Premiere", venue: "Radio City Music Hall" },
-  { city: "San Francisco", title: "Arijit Singh Symphony Tour", venue: "SAP Center" },
-  { city: "Los Angeles", title: "Diljit Dosanjh VIP Green Room", venue: "Kia Forum" },
-  { city: "Chicago", title: "Founders & Creators Mixer", venue: "The Geraghty" },
-  { city: "Dallas", title: "Retro Bollywood Vinyl Social", venue: "Toyota Music Factory" },
-  { city: "New Jersey", title: "Diwali Royale Charity Banquet", venue: "The Legacy Castle" },
+  { city: "Columbus, OH", title: "Shreya Ghoshal: The Unstoppable Tour", venue: "Nationwide Arena" },
+  { city: "Columbus, OH", title: "Kumar Sanu Live: Golden 90s Era", venue: "Southern Theatre" },
+  { city: "Columbus, OH", title: "Udit Narayan Live in Symphony", venue: "Palace Theatre" },
+  { city: "Columbus, OH", title: "Anupam Kher in Mera Woh Matlab Nahi Tha", venue: "Davidson Theatre" },
+  { city: "Columbus, OH", title: "Diaspora Business Forum with Vivek Ramaswamy", venue: "The Exchange" },
+  { city: "Columbus, OH", title: "Desi Nights Gala with DJ Yangkee", venue: "Grand Ballroom" },
+  { city: "USA & Canada", title: "Free Business & Property Marketplace", venue: "North America Network" },
 ];
 
 export function MomentMarquee() {

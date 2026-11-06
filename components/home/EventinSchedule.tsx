@@ -18,14 +18,14 @@ export function EventinSchedule() {
     <section className="py-20 sm:py-28 px-6 sm:px-12 max-w-[1280px] mx-auto space-y-12">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
         <SectionHeading
-          eyebrow="TOUR ITINERARY &bull; EVENTIN SCHEDULE"
-          titleBefore="Interactive"
-          titleItalic="Tour Schedule"
-          titleAfter="&amp; Sessions"
-          description="Explore confirmed timeline breakdowns across our headline US arena dates and gala showcases."
+          eyebrow="CONCERT ITINERARY &bull; SPONSORED TOUR SCHEDULE"
+          titleBefore="Featured"
+          titleItalic="Concert Schedule"
+          titleAfter="&amp; Timelines"
+          description="Explore timeline breakdowns across our headline Columbus shows, Dandiya festivals, and regional tour dates."
         />
         <Button variant="ghost" size="md" href="/events" className="shrink-0 self-start sm:self-auto">
-          All 6 Tour Dates &rarr;
+          View All Concerts &rarr;
         </Button>
       </div>
 

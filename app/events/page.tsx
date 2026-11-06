@@ -4,19 +4,19 @@ import { EventDirectory } from "@/components/events/EventDirectory";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Events & Tours",
+  title: "Upcoming Concerts & Tour Dates | The Desi Connections",
   description:
-    "Explore upcoming Bollywood arena concerts, red carpet galas, and private member socials across the United States.",
+    "Explore upcoming concerts in Columbus and national tours. Active members receive 2 complimentary tickets each year for sponsored shows.",
 };
 
 export default function EventsPage() {
   return (
     <div className="py-12 sm:py-20 px-6 sm:px-12 max-w-[1280px] mx-auto space-y-12">
       <SectionHeading
-        eyebrow="Calendar &amp; Tickets"
-        titleBefore="Tour Dates &amp;"
+        eyebrow="Calendar &amp; Passes"
+        titleBefore="Concert Dates &amp;"
         titleItalic="Experiences"
-        description="Priority allocations, front-row reserves, and backstage lounges for DesiConnections members across New York, San Francisco, Los Angeles, Chicago, and Dallas."
+        description="Complimentary pass allocations, front-row reserves, and cultural celebrations in Columbus, Ohio and sponsored tour cities."
       />
 
       <EventDirectory initialEvents={eventsContent} />

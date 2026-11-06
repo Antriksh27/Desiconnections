@@ -6,9 +6,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SwitchNSaveForm } from "@/components/deals/SwitchNSaveForm";
 
 export const metadata: Metadata = {
-  title: "Member Deals & Everyday Benefits",
+  title: "Energy Advisory & Member Perks | The Desi Connections",
   description:
-    "Everyday benefits for DesiConnections members, including Switch n Save energy comparisons and curated dining privileges.",
+    "Everyday benefits for members, including Switch n Save LLC electricity and natural gas advisory backed by 70+ years of experience.",
 };
 
 export default function DealsPage() {
@@ -20,10 +20,10 @@ export default function DealsPage() {
       {/* 1. Header */}
       <SectionHeading
         eyebrow="Everyday Member Perks"
-        titleBefore="Everyday Benefits"
-        titleItalic="For"
-        titleAfter="Members"
-        description="Thoughtful partnerships designed to return everyday value to our community. Switch n Save is an exclusive perk arranged through licensed providers."
+        titleBefore="Energy Advisory"
+        titleItalic="&amp;"
+        titleAfter="Member Perks"
+        description="Thoughtful partnerships designed to return everyday value to our community. Switch n Save LLC provides expert utility review backed by over 70 years of combined experience."
       />
 
       {/* 2. Switch n Save Featured Panel */}
@@ -36,10 +36,10 @@ export default function DealsPage() {
           <div className="lg:col-span-7 space-y-8">
             <div className="space-y-3">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-volt/15 text-volt text-xs font-bold uppercase tracking-wider border border-volt/30">
-                <Zap className="w-3.5 h-3.5" /> Featured Benefit
+                <Zap className="w-3.5 h-3.5" /> 70+ Years Combined Advisory Heritage
               </span>
               <h2 className="display-md text-ivory">
-                Switch n Save Energy Comparison
+                Switch n Save Energy Advisory
               </h2>
               <p className="body-base text-mist max-w-xl">
                 {switchNSaveOffer.summary}
@@ -57,10 +57,10 @@ export default function DealsPage() {
                     1
                   </span>
                   <h4 className="text-sm font-display font-semibold text-ivory">
-                    Submit Details
+                    Share Bill Copy
                   </h4>
                   <p className="text-[11px] text-mist leading-relaxed">
-                    Provide your postcode and current provider details in the short form.
+                    Provide a recent electricity or natural gas statement via our web form or directly over WhatsApp.
                   </p>
                 </div>
 
@@ -69,10 +69,10 @@ export default function DealsPage() {
                     2
                   </span>
                   <h4 className="text-sm font-display font-semibold text-ivory">
-                    Compare Rates
+                    Comprehensive Audit
                   </h4>
                   <p className="text-[11px] text-mist leading-relaxed">
-                    An accredited utility specialist reviews available group tariff plans for your meter.
+                    Our senior utility analysts evaluate peak demand charges, supply margins, and contract terms.
                   </p>
                 </div>
 
@@ -81,10 +81,10 @@ export default function DealsPage() {
                     3
                   </span>
                   <h4 className="text-sm font-display font-semibold text-ivory">
-                    Switch with Ease
+                    Informed Decision
                   </h4>
                   <p className="text-[11px] text-mist leading-relaxed">
-                    Enjoy simple switching with zero lock-in contracts and ongoing member support.
+                    We recommend transparent supplier options with zero obligation. Ongoing member guidance included.
                   </p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function DealsPage() {
                 <ShieldCheck className="w-4 h-4 text-volt" /> Eligibility &amp; Coverage
               </span>
               <p className="text-xs text-mist leading-relaxed">
-                Available to verified DesiConnections members residing in deregulated energy retail states including Texas, New York, Pennsylvania, Illinois, and Ohio.
+                Available to residential and commercial members in deregulated retail energy states including Ohio, Pennsylvania, Illinois, Texas, New York, New Jersey, and Maryland.
               </p>
             </div>
 
@@ -109,7 +109,7 @@ export default function DealsPage() {
                 {switchNSaveOffer.disclosureText}
               </p>
               <p className="text-[10px] text-muted/80">
-                DesiConnections does not provide financial or energy retail advice. Claims and contract terms are established directly between the member and the accredited utility partner.
+                The Desi Connections does not sell retail energy contracts directly. Advisory and brokerage services are operated by Switch n Save LLC with certified utility partners.
               </p>
             </div>
           </div>
@@ -125,11 +125,11 @@ export default function DealsPage() {
       <section className="space-y-8">
         <div className="border-b border-hairline pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
           <div>
-            <span className="label-caps text-gold-light">Partner Privileges</span>
-            <h2 className="display-md text-ivory mt-1">Additional Member Offers</h2>
+            <span className="label-caps text-gold-light">Community Privileges</span>
+            <h2 className="display-md text-ivory mt-1">Additional Member Benefits</h2>
           </div>
           <span className="text-xs text-muted">
-            Show your digital member card at participating partner locations
+            Included with verified community membership
           </span>
         </div>
 
@@ -159,12 +159,12 @@ export default function DealsPage() {
                   {offer.disclosureText}
                 </p>
                 <div className="flex items-center justify-between pt-1">
-                  <span className="text-[10px] text-muted font-mono uppercase">Club Member Benefit</span>
+                  <span className="text-[10px] text-muted font-mono uppercase">Member Benefit</span>
                   <Link
                     href={offer.termsLink}
                     className="text-gold-light hover:underline font-semibold inline-flex items-center gap-1"
                   >
-                    <span>View partner terms</span>
+                    <span>View terms</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
@@ -178,7 +178,7 @@ export default function DealsPage() {
       <section className="bg-midnight/50 border border-hairline rounded-3xl p-8 text-center space-y-4 max-w-2xl mx-auto">
         <h3 className="text-base font-display text-ivory">Member Privilege Terms</h3>
         <p className="text-xs text-mist leading-relaxed">
-          All member discounts, energy comparisons, and hospitality privileges are subject to partner availability and terms of service.
+          All utility analyses and marketplace exchanges are conducted with integrity and respect for member data confidentiality.
         </p>
         <div className="flex items-center justify-center gap-6 text-xs text-gold-light pt-2">
           <Link href="/terms" className="hover:underline">

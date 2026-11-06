@@ -15,7 +15,7 @@ function padZero(num: number): string {
 export function Hero() {
   const nextEvent = eventsContent.find((e) => e.status !== "past") || eventsContent[0];
 
-  // Target event date: Nov 21, 2026 19:00 EST
+  // Target event date: Nov 14, 2026 19:00 EST (Udit Narayan Live in Symphony, Columbus)
   const [timeLeft, setTimeLeft] = React.useState({
     days: 20,
     hours: 20,
@@ -24,7 +24,7 @@ export function Hero() {
   });
 
   React.useEffect(() => {
-    const target = new Date("2026-11-21T19:00:00-05:00").getTime();
+    const target = new Date("2026-11-14T19:00:00-05:00").getTime();
 
     const updateTimer = () => {
       const now = Date.now();
@@ -41,21 +41,21 @@ export function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  // Speaker & talent avatar list
+  // Performer & icon avatar list
   const confirmedSpeakers = [
-    { name: "Arijit Singh", src: "/images/star_arijit.jpg" },
-    { name: "Diljit Dosanjh", src: "/images/star_diljit.jpg" },
-    { name: "DJ Shadow", src: "/images/star_dj_shadow.jpg" },
-    { name: "Priya Sen", src: "/images/star_priya_sen.jpg" },
+    { name: "Udit Narayan", src: "/images/star_udit_narayan.jpg" },
+    { name: "Falguni Pathak", src: "/images/star_priya_sen.jpg" },
+    { name: "Bhavin Shastri", src: "/images/star_diljit.jpg" },
+    { name: "Kumar Sanu", src: "/images/star_kumar_sanu.jpg" },
   ];
 
   return (
-    <section className="relative min-h-[92vh] flex flex-col justify-between overflow-hidden pt-12 pb-10 px-6 sm:px-12 bg-[#0A0618]">
-      {/* Background Ambience: Real Concert Stage Photography + Eventin Cosmic Glow */}
+    <section className="relative min-h-[640px] lg:min-h-[780px] flex flex-col justify-between overflow-hidden pt-12 pb-10 px-6 sm:px-12 bg-[#0A0618]">
+      {/* Background Ambience: Real Concert Stage Photography + Cosmic Stage Glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <Image
           src="/images/hero_concert.jpg"
-          alt="DesiConnections Arena Tour"
+          alt="The Desi Connections Stage Experience"
           fill
           priority
           sizes="100vw"
@@ -68,7 +68,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:28px_28px] opacity-35" />
       </div>
 
-      {/* Main 2-Column Asymmetric Eventin Hero Content */}
+      {/* Main 2-Column Asymmetric Hero Content */}
       <div className="relative z-10 max-w-[1280px] mx-auto w-full my-auto py-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
@@ -78,7 +78,7 @@ export function Hero() {
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#130D2E]/90 border border-[#EC008C]/40 backdrop-blur-md shadow-[0_0_24px_rgba(236,0,140,0.2)]">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#FF2A85] animate-ping" />
                 <span className="label-caps text-[#FF2A85] tracking-[0.2em] text-[11px] font-bold">
-                  US ARENA TOUR 2026 &bull; NEW YORK &bull; SF &bull; LA &bull; CHICAGO &bull; DALLAS
+                  COLUMBUS FLAGSHIP HUB &bull; USA &amp; CANADA NETWORK
                 </span>
               </div>
             </Reveal>
@@ -90,7 +90,7 @@ export function Hero() {
                 transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
                 className="block"
               >
-                Attend Exclusive
+                Meet. Connect.
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, y: 24 }}
@@ -98,17 +98,17 @@ export function Hero() {
                 transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="block text-gradient-eventin drop-shadow-[0_4px_24px_rgba(236,0,140,0.45)]"
               >
-                Concerts &amp; Star Galas.
+                Celebrate.
               </motion.span>
             </h1>
 
             <Reveal variant="rise" delay={0.35}>
               <p className="body-lg text-mist max-w-xl leading-relaxed">
-                The private club connecting you to front-row arena seats, intimate artist lounges, and top South Asian professionals across New York, San Francisco, Los Angeles, and Chicago.
+                Exclusive events with Bollywood stars and real benefits for your everyday life. Receive 2 complimentary concert passes each year for up to 10 years, plus direct business referrals across the USA and Canada.
               </p>
             </Reveal>
 
-            {/* CTAs with Eventin Angled Arrow */}
+            {/* CTAs with Angled Arrow */}
             <Reveal variant="rise" delay={0.45}>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-1">
                 <Button
@@ -117,7 +117,7 @@ export function Hero() {
                   href="/join"
                   className="gap-2 text-sm px-8"
                 >
-                  <span>Request Membership Invite</span>
+                  <span>Join The Desi Connections</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </Button>
                 <Button
@@ -126,13 +126,13 @@ export function Hero() {
                   href="/events"
                   className="gap-2 text-sm px-7"
                 >
-                  <span>View US Tour Schedule</span>
+                  <span>View Upcoming Events</span>
                   <ArrowUpRight className="w-4 h-4 text-[#FF2A85]" />
                 </Button>
               </div>
             </Reveal>
 
-            {/* Eventin Signature: Overlapping Speaker & Talent Avatars */}
+            {/* Overlapping Performer Avatars */}
             <Reveal variant="rise" delay={0.55}>
               <div className="pt-2 flex items-center gap-4">
                 <div className="flex items-center -space-x-3">
@@ -151,7 +151,7 @@ export function Hero() {
                     </div>
                   ))}
                   <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#EC008C] to-[#7928CA] text-white text-xs font-bold flex items-center justify-center border-2 border-[#130D2E] shadow-md">
-                    +30
+                    +10
                   </div>
                 </div>
 
@@ -162,17 +162,17 @@ export function Hero() {
                     ))}
                   </div>
                   <span className="text-xs font-semibold text-ivory block">
-                    30+ Confirmed Headliners &amp; Guests
+                    Sing Along with Icons: Udit Narayan, Falguni Pathak &amp; More
                   </span>
                   <span className="text-[11px] text-mist block">
-                    Front-row allocations &bull; Private meet-and-greets
+                    2 Free Annual Event Passes &bull; 10-Year Membership Access
                   </span>
                 </div>
               </div>
             </Reveal>
           </div>
 
-          {/* Right Column (5 cols): Eventin VIP Ticket Stub & Live Countdown Box */}
+          {/* Right Column (5 cols): VIP Ticket Stub & Live Countdown Box */}
           <div className="lg:col-span-5">
             <Reveal variant="rise" delay={0.4}>
               <div className="bg-[#130D2E]/95 border border-[#EC008C]/40 rounded-[32px] p-6 sm:p-7 backdrop-blur-2xl shadow-[0_25px_60px_rgba(236,0,140,0.22)] space-y-5 relative overflow-hidden group hover:border-[#EC008C]/65 transition-colors">
@@ -180,7 +180,7 @@ export function Hero() {
                 {/* Event Photo Thumbnail */}
                 <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/10">
                   <Image
-                    src={nextEvent.imageUrl || "/images/event_gala_nyc.jpg"}
+                    src={nextEvent.imageUrl || "/images/star_udit_narayan.jpg"}
                     alt={nextEvent.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 450px"
@@ -192,49 +192,44 @@ export function Hero() {
                     {nextEvent.category}
                   </span>
                   <span className="absolute top-3 right-3 text-[10px] font-mono uppercase tracking-widest text-ivory bg-[#0A0618]/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10">
-                    PASS #DC-2026-NYC
+                    PASS #TDC-COLUMBUS
                   </span>
                   <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-ivory font-semibold">
                     <span className="flex items-center gap-1.5">
                       <MapPin className="w-3.5 h-3.5 text-[#FF2A85]" />
-                      {nextEvent.city}
+                      {nextEvent.city}, OH
                     </span>
-                    <span className="text-[#00E5FF] font-bold">
-                      {nextEvent.priceFrom || "VIP Members"}
+                    <span className="flex items-center gap-1.5 text-gold-light">
+                      <Calendar className="w-3.5 h-3.5" />
+                      {nextEvent.date.split(",")[1]?.trim() || "Nov 14, 2026"}
                     </span>
                   </div>
                 </div>
 
-                {/* Event Name & Date */}
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2 text-xs text-mist">
-                    <Calendar className="w-3.5 h-3.5 text-[#FF2A85]" />
-                    <span>{nextEvent.date}</span>
-                    <span>&bull;</span>
-                    <span className="text-[#FF2A85] flex items-center gap-1 font-semibold">
-                      <Flame className="w-3 h-3 fill-[#FF2A85]" /> Selling Fast
+                {/* Event Info */}
+                <div className="space-y-1.5">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#00E5FF] animate-pulse" />
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-[#00E5FF]">
+                      Next Sponsored Concert
                     </span>
                   </div>
-                  <h2 className="text-xl font-bold font-display text-ivory">
+                  <h3 className="text-xl font-display font-bold text-white group-hover:text-gold-light transition-colors">
                     {nextEvent.title}
-                  </h2>
+                  </h3>
                   <p className="text-xs text-mist truncate">
                     {nextEvent.venue}
                   </p>
                 </div>
 
-                {/* Countdown Grid (Eventin Signature Style) */}
-                <div className="space-y-2 pt-2 border-t border-dashed border-white/15">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-[#00E5FF]">
-                      Live Doors Countdown
-                    </span>
-                    <span className="text-[10px] text-mist font-mono">
-                      NOV 21 &bull; 7:00 PM EST
-                    </span>
+                {/* Eventin Style Countdown Timer */}
+                <div className="bg-[#0A0618]/80 border border-white/10 rounded-2xl p-4 text-center space-y-2">
+                  <div className="flex items-center justify-center gap-2 text-xs font-semibold text-mist uppercase tracking-widest">
+                    <Flame className="w-3.5 h-3.5 text-[#FF2A85]" />
+                    <span>Concert Starts In</span>
                   </div>
-
-                  <div className="grid grid-cols-4 gap-2 text-center">
+                  
+                  <div className="grid grid-cols-4 gap-2 pt-1">
                     <div className="bg-[#0A0618]/90 border border-white/10 rounded-xl p-2.5 shadow-inner">
                       <span className="block text-2xl font-extrabold font-display text-ivory">
                         {padZero(timeLeft.days)}
@@ -276,7 +271,10 @@ export function Hero() {
                 {/* Lineup Chips & Action CTA */}
                 <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 border-t border-dashed border-white/15">
                   <div className="flex flex-wrap items-center gap-1.5 text-[11px]">
-                    {nextEvent.lineup.slice(0, 2).map((artist, idx) => (
+                    <span className="px-2.5 py-0.5 rounded-full bg-[#EC008C]/20 border border-[#EC008C]/40 text-[#FF2A85] font-bold">
+                      2 Passes Included
+                    </span>
+                    {nextEvent.lineup.slice(0, 1).map((artist, idx) => (
                       <span
                         key={idx}
                         className="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-ivory"
@@ -293,7 +291,7 @@ export function Hero() {
                     className="gap-1.5 shrink-0"
                   >
                     <Ticket className="w-3.5 h-3.5" />
-                    <span>Reserve VIP Pass</span>
+                    <span>Reserve Passes</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Button>
                 </div>
@@ -304,42 +302,42 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Eventin Signature 4-Counter Stats Strip */}
+      {/* Signature 4-Counter Stats Strip */}
       <div className="relative z-10 max-w-[1280px] mx-auto w-full pt-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 rounded-2xl bg-[#130D2E]/80 border border-white/10 backdrop-blur-md">
           <div className="text-center md:text-left md:border-r border-white/10 px-4 space-y-0.5">
             <span className="block text-2xl sm:text-3xl font-extrabold font-display text-ivory">
-              32<span className="text-[#FF2A85]">+</span>
+              2 Passes<span className="text-[#FF2A85]"> / yr</span>
             </span>
             <span className="text-[11px] uppercase tracking-wider font-semibold text-mist">
-              Headline Arena Tours
+              Complimentary Concert Tickets
             </span>
           </div>
 
           <div className="text-center md:text-left md:border-r border-white/10 px-4 space-y-0.5">
             <span className="block text-2xl sm:text-3xl font-extrabold font-display text-ivory">
-              5,400<span className="text-[#00E5FF]">+</span>
+              10<span className="text-[#00E5FF]"> Years</span>
             </span>
             <span className="text-[11px] uppercase tracking-wider font-semibold text-mist">
-              Verified Club Members
+              Continuous Event Privileges
             </span>
           </div>
 
           <div className="text-center md:text-left md:border-r border-white/10 px-4 space-y-0.5">
             <span className="block text-2xl sm:text-3xl font-extrabold font-display text-ivory">
-              6<span className="text-gold-light"> US Hubs</span>
+              70<span className="text-gold-light">+ Years</span>
             </span>
             <span className="text-[11px] uppercase tracking-wider font-semibold text-mist">
-              NY &bull; SF &bull; LA &bull; CHI &bull; DAL
+              Energy Advisory Experience
             </span>
           </div>
 
           <div className="text-center md:text-left px-4 space-y-0.5">
             <span className="block text-2xl sm:text-3xl font-extrabold font-display text-ivory">
-              48<span className="text-[#FF2A85]">h</span>
+              USA &amp;<span className="text-[#FF2A85]"> Canada</span>
             </span>
             <span className="text-[11px] uppercase tracking-wider font-semibold text-mist">
-              Priority Ticket Presales
+              Business &amp; Property Network
             </span>
           </div>
         </div>

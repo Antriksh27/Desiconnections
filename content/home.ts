@@ -35,59 +35,59 @@ export const HomeContentSchema = z.object({
 
 export type HomeContent = z.infer<typeof HomeContentSchema>;
 
-// TODO: Review Home quotes and statistics with US marketing team
 export const homeContent: HomeContent = {
   hero: {
-    eyebrow: "The Premier US Club for Desi Entertainment & Connections",
+    eyebrow: "The Community Network for Culture and Connections",
     headlinePart1: "Meet.",
     headlineItalic: "Connect.",
     headlinePart2: "Celebrate.",
-    supportCopy: "Where South Asian entertainment meets genuine opportunity, friendships become connections, and membership brings everyday benefits across the United States.",
+    supportCopy:
+      "Complimentary concert passes for top live tours, direct business and property referrals across the United States and Canada, and expert energy advisory backed by over 70 years of experience.",
     primaryCtaText: "Join the club",
     primaryCtaHref: "/join",
-    secondaryCtaText: "Explore US Events",
+    secondaryCtaText: "Explore Concerts",
     secondaryCtaHref: "/events",
   },
   stats: [
-    { value: "5,400+", label: "Verified Members across the United States" },
-    { value: "32", label: "Headline Arena Tours & Exclusive Galas" },
-    { value: "6", label: "Major Hubs: New York, Bay Area, Los Angeles, Chicago, Dallas" },
+    { value: "2 Passes", label: "Complimentary Annual Concert Tickets for Members" },
+    { value: "10 Years", label: "Ongoing Event Privileges Upon Account Verification" },
+    { value: "70+ Years", label: "Combined Energy & Utility Advisory Experience" },
   ],
   quotes: [
     {
-      // TODO: Replace with authenticated member testimonials
-      quote: "Attending the Arijit Singh after-party through DesiConnections felt like being invited to a private friend's penthouse in Manhattan. The room was electric.",
-      name: "Rohan Kapoor",
-      title: "Fintech Founder",
-      city: "New York",
+      quote:
+        "Having free tickets to see Udit Narayan right here in Columbus felt incredible. Sharing our electric bill was simple, and the concert pass was delivered smoothly.",
+      name: "Sanjay Patel",
+      title: "Retail Business Owner",
+      city: "Columbus, OH",
       avatarUrl: "/images/member_rohan.jpg",
-      memberTier: "Club Member",
+      memberTier: "Commercial Member",
     },
     {
-      // TODO: Replace with authenticated member testimonials
-      quote: "Finally, a cultural club that feels refined without losing the warmth and energy of our roots. Met my startup co-founder at our San Francisco mixer.",
-      name: "Dr. Tanya Sen",
-      title: "Biotech Founder & Investor",
-      city: "San Francisco",
+      quote:
+        "We listed our motel acquisition opportunity through the community marketplace and connected directly with qualified buyers within three weeks. Zero broker commissions.",
+      name: "Pooja Shah",
+      title: "Hospitality Operator",
+      city: "Cleveland, OH",
       avatarUrl: "/images/member_tanya.jpg",
-      memberTier: "Inner Circle",
+      memberTier: "Commercial Member",
     },
     {
-      // TODO: Replace with authenticated member testimonials
-      quote: "The concert allocations alone make membership worthwhile. The Switch n Save bill check was an effortless bonus.",
-      name: "Vikram Nambiar",
-      title: "Creative Director",
-      city: "Dallas",
+      quote:
+        "The Desi Connections makes cultural events accessible for our entire family. The bill review even helped us understand our utility rate structure.",
+      name: "Amitabh Joshi",
+      title: "Healthcare Consultant",
+      city: "Dublin, OH",
       avatarUrl: "/images/member_vikram.jpg",
-      memberTier: "Club Member",
+      memberTier: "Residential Pass",
     },
   ],
   professions: [
+    "Business Owners",
+    "Hotel Operators",
     "Founders",
-    "Creators",
+    "Retailers",
     "Doctors",
-    "Lawyers",
-    "Artists",
     "Engineers",
     "Investors",
     "Consultants",

@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 
 export function EventsCarousel() {
-  const upcomingEvents = eventsContent.filter((e) => e.status !== "past").slice(0, 3);
+  const upcomingEvents = eventsContent.filter((e) => e.status !== "past").slice(0, 6);
 
   return (
     <section className="py-20 sm:py-28 px-6 sm:px-12 max-w-[1280px] mx-auto space-y-12 relative">
@@ -19,14 +19,14 @@ export function EventsCarousel() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EC008C]/15 border border-[#EC008C]/35">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF2A85] animate-pulse" />
             <span className="text-[11px] font-bold uppercase tracking-widest text-[#FF2A85]">
-              ON TOUR &bull; US ARENAS &amp; SHOWCASES
+              ON TOUR &bull; ARENAS &amp; SHOWCASES
             </span>
           </div>
           <h2 className="display-lg text-white font-display font-extrabold leading-tight">
             Upcoming <span className="text-gradient-eventin">Live Experiences</span>.
           </h2>
           <p className="body-lg text-mist">
-            Members receive 48-hour advance presale access, lower-bowl allocations, and private lounge check-in across all dates.
+            Members receive advance presale access, lower-bowl allocations, and private lounge check-in across all sponsored dates.
           </p>
         </div>
 
@@ -36,7 +36,7 @@ export function EventsCarousel() {
           href="/events"
           className="shrink-0 self-start sm:self-auto gap-2 text-xs"
         >
-          <span>See all 6 US tour dates</span>
+          <span>See all tour dates</span>
           <ArrowUpRight className="w-4 h-4 text-[#FF2A85]" />
         </Button>
       </div>
@@ -44,7 +44,7 @@ export function EventsCarousel() {
       {/* Grid of upcoming event ticket cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
         {upcomingEvents.map((event, idx) => (
-          <Reveal key={event.slug} variant="rise" delay={0.12 * idx}>
+          <Reveal key={event.slug} variant="rise" delay={0.08 * idx}>
             <Link
               href={`/events/${event.slug}`}
               className="group bg-[#130D2E]/95 hover:bg-[#1A123D] border border-white/10 hover:border-[#EC008C]/60 rounded-[32px] overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(236,0,140,0.22)] h-full"
@@ -55,7 +55,7 @@ export function EventsCarousel() {
                   src={event.imageUrl}
                   alt={event.title}
                   tone={event.imageSlotTone}
-                  aspectRatio="4:5"
+                  aspectRatio="16:9"
                   label={event.title}
                 >
                   <div className="flex items-center justify-between">
@@ -89,7 +89,7 @@ export function EventsCarousel() {
 
                   {/* Lineup Chips */}
                   <div className="flex flex-wrap items-center gap-1.5 pt-2">
-                    {event.lineup.slice(0, 2).map((artist, aIdx) => (
+                    {event.lineup.slice(0, 3).map((artist, aIdx) => (
                       <span
                         key={aIdx}
                         className="text-[10px] font-medium text-white/80 bg-white/5 border border-white/10 px-2.5 py-0.5 rounded-full"

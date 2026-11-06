@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { Check, ArrowUpRight, Sparkles, Ticket } from "lucide-react";
 import { membershipTiersContent } from "@/content/membership";
 import { Button } from "@/components/ui/Button";
@@ -18,14 +17,14 @@ export function EventinPasses() {
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#EC008C]/15 border border-[#EC008C]/35">
           <Sparkles className="w-3 h-3 text-[#FF2A85]" />
           <span className="text-[11px] font-bold uppercase tracking-widest text-[#FF2A85]">
-            MEMBERSHIP PASSES &bull; TICKET PRIVILEGES
+            MEMBERSHIP PRIVILEGES &bull; 10-YEAR PASSES
           </span>
         </div>
         <h2 className="display-lg text-white font-display font-extrabold">
-          Choose Your <span className="text-gradient-eventin">Pass Tier</span>.
+          Community <span className="text-gradient-eventin">Membership Passes</span>.
         </h2>
         <p className="body-lg text-mist max-w-xl mx-auto">
-          From casual concert presales to guaranteed backstage arena tables. Select your tier and request your private club invite.
+          No monthly subscription dues. Submit your recent utility bill to verify your account and activate up to 10 years of concert tickets and marketplace privileges.
         </p>
       </div>
 
@@ -69,16 +68,21 @@ export function EventinPasses() {
                     </p>
                   </div>
 
-                  {/* Price Block */}
-                  <div className="pt-4 pb-6 border-y border-white/10 flex items-baseline gap-2">
-                    <span className="text-4xl sm:text-5xl font-display font-extrabold text-white tracking-tight">
-                      {tier.price}
-                    </span>
-                    {tier.period && (
-                      <span className="text-xs text-mist font-medium">
-                        / {tier.period}
+                  {/* Price & Requirement Block */}
+                  <div className="pt-4 pb-6 border-y border-white/10 flex flex-col gap-1.5">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-3xl sm:text-4xl font-display font-extrabold text-white tracking-tight">
+                        {tier.price}
                       </span>
-                    )}
+                      {tier.period && (
+                        <span className="text-xs text-mist font-medium">
+                          ({tier.period})
+                        </span>
+                      )}
+                    </div>
+                    <span className="text-[11px] text-gold-light font-medium">
+                      {tier.requirement}
+                    </span>
                   </div>
 
                   {/* Perks Checklist */}
@@ -113,14 +117,11 @@ export function EventinPasses() {
                     variant={isFeatured ? "primary" : "ghost"}
                     size="md"
                     href={`/join?plan=${tier.slug}`}
-                    className="w-full gap-2 text-xs"
+                    className="w-full justify-center group"
                   >
-                    <span>Request {tier.name}</span>
-                    <ArrowUpRight className="w-4 h-4" />
+                    <span>Activate {tier.name}</span>
+                    <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </Button>
-                  <p className="text-[10px] text-mist/70 text-center mt-2.5 font-medium">
-                    No payment required upfront &bull; Committee review
-                  </p>
                 </div>
               </div>
             </Reveal>
@@ -128,15 +129,19 @@ export function EventinPasses() {
         })}
       </div>
 
-      {/* Compare link */}
-      <div className="text-center pt-2 relative z-10">
-        <Link
-          href="/membership"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-mist hover:text-[#FF2A85] transition-colors"
-        >
-          <span>Compare full pass breakdown &amp; concierge terms</span>
-          <ArrowUpRight className="w-3.5 h-3.5" />
-        </Link>
+      {/* Bottom Subtext */}
+      <div className="text-center text-xs text-mist max-w-lg mx-auto pt-2">
+        <p>
+          Have questions or prefer direct assistance? Call or text Mr. Ketan Patel at{" "}
+          <a href="tel:6147722247" className="text-gold-light font-bold hover:underline">
+            614-772-2247
+          </a>{" "}
+          or{" "}
+          <a href="tel:6147457133" className="text-gold-light font-bold hover:underline">
+            614-745-7133
+          </a>
+          .
+        </p>
       </div>
     </section>
   );

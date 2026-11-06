@@ -13,9 +13,9 @@ export interface MembershipShowpieceCardProps {
 }
 
 export function MembershipShowpieceCard({
-  memberName = "AARAV MEHTA",
-  memberNumber = "DC • 8820 4192",
-  tierName = "Club Member",
+  memberName = "COMMUNITY MEMBER",
+  memberNumber = "TDC • 614-772-2247",
+  tierName = "Commercial Member",
   className,
 }: MembershipShowpieceCardProps) {
   const cardRef = React.useRef<HTMLDivElement>(null);
@@ -77,7 +77,7 @@ export function MembershipShowpieceCard({
               Private Membership
             </span>
             <div className="text-xl sm:text-2xl font-display font-semibold tracking-tight">
-              Desi<span className="italic font-light">Connections</span>
+              The Desi <span className="italic font-light">Connections</span>
             </div>
           </div>
           <div className="p-2 rounded-full bg-ink/10 backdrop-blur-sm">

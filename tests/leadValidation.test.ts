@@ -82,23 +82,18 @@ describe("Lead Validation & Honeypot Logic", () => {
 });
 
 describe("Content Layer & Clearance Integrity", () => {
-  it("contains exactly 6 events across major US tour hubs", () => {
-    expect(eventsContent).toHaveLength(6);
+  it("contains all 7 events across community tour hubs", () => {
+    expect(eventsContent).toHaveLength(7);
     const cities = new Set(eventsContent.map((e) => e.city));
-    expect(cities.has("New York")).toBe(true);
-    expect(cities.has("San Francisco")).toBe(true);
-    expect(cities.has("Los Angeles")).toBe(true);
-    expect(cities.has("Chicago")).toBe(true);
-    expect(cities.has("Dallas")).toBe(true);
-    expect(cities.has("New Jersey")).toBe(true);
+    expect(cities.has("Columbus")).toBe(true);
   });
 
   it("strictly protects celebrity likeness: filters out uncleared talent", () => {
-    expect(starsContent).toHaveLength(8);
+    expect(starsContent).toHaveLength(10);
     const clearedStars = starsContent.filter((s) => s.rightsCleared);
     const unclearedStars = starsContent.filter((s) => !s.rightsCleared);
 
-    expect(clearedStars).toHaveLength(4);
+    expect(clearedStars).toHaveLength(6);
     expect(unclearedStars).toHaveLength(4);
 
     // Ensure uncleared stars are never mistakenly marked as cleared

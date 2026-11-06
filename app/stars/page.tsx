@@ -4,9 +4,9 @@ import { StarDirectory } from "@/components/stars/StarDirectory";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Bollywood Stars & Talent",
+  title: "Touring Artists & Cultural Talent | The Desi Connections",
   description:
-    "Meet confirmed subcontinent playback legends, producers, and performers headlining DesiConnections tours across the United States.",
+    "Discover legendary vocalists and folk performers headlining The Desi Connections tours, including Udit Narayan, Falguni Pathak, and Bhavin Shastri.",
 };
 
 export default function StarsPage() {
@@ -14,10 +14,10 @@ export default function StarsPage() {
     <div className="py-12 sm:py-20 px-6 sm:px-12 max-w-[1280px] mx-auto space-y-12">
       <SectionHeading
         eyebrow="Talent Roster"
-        titleBefore="Bollywood"
-        titleItalic="Headliners"
-        titleAfter="&amp; Guests"
-        description="Exclusive meet-and-greets, soundcheck walkthroughs, and VIP lounge access for DesiConnections members."
+        titleBefore="Headline Artists"
+        titleItalic="&amp; Cultural"
+        titleAfter="Legends"
+        description="Exclusive meet-and-greets, soundcheck walkthroughs, and VIP lounge access for The Desi Connections community members."
       />
 
       <StarDirectory initialStars={starsContent} />

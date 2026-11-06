@@ -157,6 +157,21 @@ export function ContactForm() {
           </Button>
         </div>
 
+        <div className="pt-2 text-center border-t border-hairline/60">
+          <p className="text-[11px] text-mist">
+            Prefer direct assistance? Call or WhatsApp Mr. Ketan Patel (Columbus, OH):
+          </p>
+          <div className="flex items-center justify-center gap-3 pt-1 text-xs font-bold text-gold-light">
+            <a href="tel:6147722247" className="hover:underline">
+              614-772-2247
+            </a>
+            <span>&bull;</span>
+            <a href="https://wa.me/16147722247" target="_blank" rel="noopener noreferrer" className="hover:underline text-volt">
+              WhatsApp 614-745-7133
+            </a>
+          </div>
+        </div>
+
         <p className="text-[11px] text-mist/70 text-center leading-normal pt-1">
           Data use note: Your contact details are used strictly to reply to your enquiry. We never sell or share your data with advertisers.
         </p>

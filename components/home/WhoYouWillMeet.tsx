@@ -42,15 +42,17 @@ export function WhoYouWillMeet() {
       </div>
 
       {/* Stats Counter Numerals */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 py-8 border-y border-white/10 text-center relative z-10">
-        {stats.map((stat, idx) => (
-          <div key={idx} className="space-y-2">
-            <CountUp value={stat.value} className="numeral text-gradient-eventin block font-black" />
-            <span className="text-xs uppercase tracking-wider text-mist font-semibold">
-              {stat.label}
-            </span>
-          </div>
-        ))}
+      <div className="py-8 border-y border-white/10 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
+          {stats.map((stat, idx) => (
+            <div key={idx} className="space-y-2">
+              <CountUp value={stat.value} className="numeral text-gradient-eventin block font-black" />
+              <span className="text-xs uppercase tracking-wider text-mist font-semibold">
+                {stat.label}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Three Member Editorial Cards with Real Portraits */}

@@ -9,45 +9,49 @@ export const DealOfferSchema = z.object({
   disclosureText: z.string(),
   isSwitchNSave: z.boolean().optional(),
   category: z.string(),
+  experienceBadge: z.string().optional(),
 });
 
 export type DealOffer = z.infer<typeof DealOfferSchema>;
 
-// Seeded 3 partner offers including Switch n Save
+// Verified partner offers including Switch n Save LLC.
 // NOTE: AGENTS.md strictly dictates: No hard-coded savings figures. Always show partner disclosure and terms link.
-// TODO: Replace partner agreements with live affiliate contracts once legally vetted.
 export const dealsContent: DealOffer[] = [
   {
-    // TODO: Verify national retail energy partner license
-    partner: "Switch n Save",
+    partner: "Switch n Save LLC",
     slug: "switch-n-save",
-    title: "Member Energy Comparison & Switching",
-    summary: "Review your electricity and gas plans with an accredited utility specialist. Members receive dedicated support and access to negotiated group tariff plans.",
+    title: "Electricity & Natural Gas Advisory",
+    summary:
+      "Access over 70 years of combined energy advisory experience. We help residential and commercial members evaluate utility rate structures, demand charges, and competitive supplier tariffs.",
     termsLink: "/terms#switch-n-save",
-    disclosureText: "Switch n Save offers are provided by licensed US energy brokerage partners. Actual plan rates, eligibility, and utility terms vary by state and deregulated market.",
+    disclosureText:
+      "Switch n Save offers are provided by licensed energy partners and certified utility advisors operated by Switch n Save LLC. Tariff availability and contract terms vary by utility territory and state regulations. We do not guarantee specific savings amounts.",
     isSwitchNSave: true,
-    category: "Utilities & Home",
+    category: "Energy & Utilities",
+    experienceBadge: "70+ Years Combined Experience",
   },
   {
-    // TODO: Confirm partner venue participating locations in NY, SF, LA, and Dallas
-    partner: "Spice & Saffron Dining Collective",
-    slug: "spice-saffron-dining",
-    title: "Curated Member Dining Privileges",
-    summary: "Enjoy priority table reservations and a complimentary signature cocktail or dessert across our network of award-winning desi dining rooms.",
-    termsLink: "/terms#dining-partners",
-    disclosureText: "Dining privileges are provided directly by participating restaurant partners upon presentation of an active DesiConnections member card.",
+    partner: "North America Hospitality Exchange",
+    slug: "hospitality-exchange",
+    title: "Commercial Property Referral Network",
+    summary:
+      "A community-driven marketplace for buying and selling motels, convenience stores, and commercial real estate across the USA and Canada with zero platform listing fees.",
+    termsLink: "/terms#marketplace",
+    disclosureText:
+      "Marketplace listings are shared peer-to-peer among verified community members. Buyers and sellers are responsible for independent legal and financial due diligence.",
     isSwitchNSave: false,
-    category: "Hospitality & Dining",
+    category: "Business Marketplace",
   },
   {
-    // TODO: Finalize corporate travel agency partnership
-    partner: "Subcontinent Express Travel",
-    slug: "subcontinent-express-travel",
-    title: "India & Diaspora Travel Concierge",
-    summary: "Access preferred fare structures and extra baggage allowances on selected international carriers connecting the United States and India.",
-    termsLink: "/terms#travel-partners",
-    disclosureText: "Airline fares and baggage allowances are subject to carrier availability and individual ticket booking conditions.",
+    partner: "Desi Community Talent Board",
+    slug: "community-talent-board",
+    title: "Employment Opportunities Exchange",
+    summary:
+      "Post hiring requirements or discover career openings within trusted diaspora-led businesses without paying third-party recruiting commissions.",
+    termsLink: "/terms#employment",
+    disclosureText:
+      "Employment postings are submitted directly by verified members. Employment terms and wage agreements remain strictly between the employer and candidate.",
     isSwitchNSave: false,
-    category: "Travel & Lifestyle",
+    category: "Career & Staffing",
   },
 ];

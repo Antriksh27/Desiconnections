@@ -50,7 +50,7 @@ export function CountUp({ value, className, duration = 1.6 }: CountUpProps) {
     return () => cancelAnimationFrame(animationFrameId);
   }, [isInView, rawNum, duration, shouldReduceMotion]);
 
-  if (shouldReduceMotion) {
+  if (shouldReduceMotion || !match) {
     return <span className={className}>{value}</span>;
   }
 

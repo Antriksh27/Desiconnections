@@ -66,37 +66,48 @@ export default function StyleguidePage() {
           />
         </section>
 
-        {/* 1. Wordmark Suite */}
+        {/* 1. Brand Logo & Wordmark Suite */}
         <section className="space-y-6">
           <div className="border-b border-hairline pb-4 flex items-baseline justify-between">
-            <h2 className="display-md text-ivory">01. Brand Wordmark</h2>
-            <span className="label-caps text-muted">components/brand/Wordmark</span>
+            <h2 className="display-md text-ivory">01. Official Brand Logo</h2>
+            <span className="label-caps text-muted">components/brand/Logo</span>
           </div>
 
           <div className="bg-midnight border border-hairline rounded-3xl p-6 sm:p-10 space-y-8">
-            <div className="space-y-3">
-              <span className="label-caps text-muted">Sizes & Variations</span>
+            <div className="space-y-6">
+              <span className="label-caps text-muted">Horizontal Brand Lockups</span>
               <div className="flex flex-col gap-6 pt-2">
                 <div>
-                  <span className="text-[10px] text-muted uppercase tracking-wider block mb-1">Extra Large (xl)</span>
-                  <Wordmark size="xl" showDot />
+                  <span className="text-[10px] text-muted uppercase tracking-wider block mb-2">Extra Large (xl)</span>
+                  <Wordmark size="xl" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-muted uppercase tracking-wider block mb-1">Large (lg)</span>
+                  <span className="text-[10px] text-muted uppercase tracking-wider block mb-2">Large (lg - footer)</span>
                   <Wordmark size="lg" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-muted uppercase tracking-wider block mb-1">Medium (md - default)</span>
+                  <span className="text-[10px] text-muted uppercase tracking-wider block mb-2">Medium (md - mobile menu)</span>
                   <Wordmark size="md" />
                 </div>
                 <div>
-                  <span className="text-[10px] text-muted uppercase tracking-wider block mb-1">Small (sm - navbar)</span>
+                  <span className="text-[10px] text-muted uppercase tracking-wider block mb-2">Small (sm - navbar)</span>
                   <Wordmark size="sm" />
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-hairline grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <span className="text-[10px] text-muted uppercase tracking-wider block mb-2">Full Lockup (Stacked)</span>
+                  <Wordmark variant="full" size="md" />
+                </div>
+                <div>
+                  <span className="text-[10px] text-muted uppercase tracking-wider block mb-2">Emblem Mark Alone</span>
+                  <Wordmark variant="emblem" size="md" />
                 </div>
               </div>
             </div>
             <p className="text-xs text-mist">
-              &quot;Desi&quot; is set in Ivory Fraunces; &quot;Connections&quot; is set in Gold-Light italic weight 300.
+              The official &quot;The Desi Connections&quot; insignia features the multi-color five-figure unity star paired with vibrant rani brush lettering and high-contrast tagline.
             </p>
           </div>
         </section>
