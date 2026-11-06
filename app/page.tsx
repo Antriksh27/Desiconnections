@@ -34,16 +34,19 @@ export default function Home() {
       {/* 7. Bollywood Stars Spotlight (cleared talent only) */}
       <StarsSpotlight />
 
-      {/* 8. Eventin 3-Column Membership Pass Tiers Table */}
+      {/* 8. Authentic Event Memories & Star Photography Archive */}
+      <HomeGallery />
+
+      {/* 9. Eventin 3-Column Membership Pass Tiers Table */}
       <EventinPasses />
 
-      {/* 9. Who You Will Meet (Member Testimonials & Real Portraits) */}
+      {/* 10. Who You Will Meet (Member Testimonials & Real Portraits) */}
       <WhoYouWillMeet />
 
-      {/* 10. Everyday Benefits Strip (quiet partner perk row) */}
+      {/* 11. Everyday Benefits Strip (quiet partner perk row) */}
       <EverydayBenefitsStrip />
 
-      {/* 11. Final CTA with Stage Glow & Lead Capture */}
+      {/* 12. Final CTA with Stage Glow & Lead Capture */}
       <FinalCta />
     </main>
   );
